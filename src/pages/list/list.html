@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of responseData">
+      <ion-thumbnail item-start>
+        <img src="{{item.field_image[0].url}}"/>
+      </ion-thumbnail>
+      <h2>{{item.title[0].value}}</h2>
+      <div [innerHtml]="item.body[0].value"></div>
+      <button ion-button clear item-end (click)="gotoDetail(item.nid[0].value)">Détail</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

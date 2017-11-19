@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title *ngIf="content" >{{content.title[0].value}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content *ngIf="content">
+
+  <ion-card>
+
+    <img src="{{content.field_image[0].url}}"/>
+
+    <ion-card-content>
+      <ion-card-title>
+        {{content.title[0].value}}
+      </ion-card-title>
+      <div [innerHtml]="content.body[0].value"></div>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
