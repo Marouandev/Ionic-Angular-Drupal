@@ -78,7 +78,7 @@ export class UserserviceProvider {
 
   }
 
-  Update(credentials) {
+  Update(id, credentials) {
     return new Promise((resolve, reject) => {
 
     this.apiUrl = this.config.urlApi + this.userconfig.baseurl + id;
